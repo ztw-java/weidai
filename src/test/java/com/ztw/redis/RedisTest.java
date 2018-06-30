@@ -19,7 +19,7 @@ public class RedisTest {
     @Test
     public void test001(){
         try {
-            stringRedisTemplate.opsForValue().set("name", "ztw");
+            stringRedisTemplate.opsForValue().set("name", "ztw1");
             String str = stringRedisTemplate.opsForValue().get("name");
             System.out.println(str);
         } catch (Exception e) {
