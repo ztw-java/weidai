@@ -8,7 +8,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 /**
- * EnableMethodCache 和 EnableCreateCacheAnnotation 是用于激活jetcache
+ * EnableMethodCache，EnableCreateCacheAnnotation这两个注解分别激活Cached和CreateCache注解
+ *
+ * 首先加入对cache的注解支持---@EnableMethodCache(basePackages="com.xx")
+ * 后面的包名是使用该注解的方法所在的包的全路径
+ *
+ * JetCache中提供了@createCache的注解的支持，可以自己定义的cache，灵活性比较高，下面讲一下具体的用法
+ * 加入createCache的支持----@EnableCreateCacheAnnotation
  *
  */
 @EnableMethodCache(basePackages = "com.ztw")

@@ -2,6 +2,8 @@ package com.ztw.service;
 
 import com.alicp.jetcache.anno.CacheType;
 import com.alicp.jetcache.anno.Cached;
+import com.ztw.annotation.RedisCache;
+import com.ztw.annotation.RedisCacheKey;
 import com.ztw.dao.UserDao;
 import com.ztw.entity.User;
 import lombok.extern.slf4j.Slf4j;
@@ -28,6 +30,13 @@ public class UserServiceImpl implements UserService {
     public String getName(long userId) {
         log.info("{} | 进入service方法", userId);
         return userDao.getName(userId);
+    }
+
+
+    @RedisCache
+    public String getUserName(@RedisCacheKey String userName){
+        System.out.println("1111111111111111");
+        return "userName".concat(userName);
     }
 
 }
